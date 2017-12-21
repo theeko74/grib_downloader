@@ -36,11 +36,10 @@ class WeatherModel:
 
         # Connect to API with the right URL endpoint
         log.debug("Connect to API: {}".format(self.api))
-        print("Connect to API: {}".format(self.api))
         r = requests.get(self.api, stream=True)
 
         # Format file name with custom path, if specified
-        file_name = "GRIB_{0}_{1}_{2}".format(
+        file_name = "GRIB_{0}_{1}_{2}.grb".format(
             self.__class__.__name__,
             self.zone,
             time.strftime("%d%m%Y-%H%M%S")
@@ -59,6 +58,7 @@ class WeatherModel:
                 f.write(chunk)
                 loading_count += 1
             print("*")
+        log.debug("GRIB file saved at: {}".format(file_name))
 
     def set_zone(self, zone):
         """Transpose zone to (x,X,y,Y) coordinates"""
@@ -76,3 +76,7 @@ class WeatherModel:
                 lat_max  = self.lat_max,
                 args     = self.args
             )
+            return 0
+        else:
+            log.debug("Wrong zone name")
+            return 1
