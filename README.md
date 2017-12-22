@@ -1,13 +1,15 @@
-GRIB DOWNLOADER
+Grib Downloader
 ===============
 
 Command line script to download grib files from Meteo France's servers.
+
 Two models are available:
+
     * Arpege  0.1°      7,5km   4 days
     * Arome   0.025°    1,3mk   2 days
 
 
-INSTALLATION
+Installation
 ------------
 
 * The script runs under python3, so make sure it is installed.
@@ -17,7 +19,7 @@ $ pip3 install -r requirements.txt
 ```
 
 
-GETTING STARTED
+Getting Started
 ---------------
 
 1. First, you need to choose a model between arpege or arome;
@@ -33,7 +35,7 @@ $ ./grib.py arome -c -2,1,42,45
 ```
 
 
-OPTIONS
+Options
 -------
 
 * `-v` or `--verbose` activates verbose mode.
