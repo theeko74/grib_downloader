@@ -1,0 +1,40 @@
+arpege vers 4H et 15H35 GMT avec un navigateur:
+
+
+195.154.231.142/grib/arpege?x=-1&X=5&y=38&Y=44.5&r=wgtprn
+
+
+x X y Y paramètres = zone
+r paramètre liste des données à télécharger
+w ind
+g ust
+t emp
+p ression
+r ain
+n uage
+
+
+il y a aussi arome et aromeHD mais je n'ai pas les heures en tête en remplaçant arpège avec arome ou arome01
+
+
+------------
+
+
+Lat min = 45N
+Long min = 1E
+Lat max = 38N
+Lon max = 13E
+
+
+http://dcpc-nwp.meteo.fr/services/PS_GetCache_DCPCPreviNum?token=__5yLVTdr-sGeHoPitnFc7TZ6MhBcJxuSsoZp6y0leVHU__&model=AROME&grid=0.01&package=SP1&time=00H&referencetime=2017-12-20T03:00:00Z&format=grib2
+
+
+https://donneespubliques.meteofrance.fr/inspire/api/__C_Eg9g-Qtci2H9lFyyZZLO-YMjctPymJDn4sPE7T5Ls__/MF-NWP-HIGHRES-AROME-0025-FRANCE-WMS?request=GetCapabilities&service=WMS&version=1.3.0
+
+https://geoservices.meteofrance.fr/api/__C_Eg9g-Qtci2H9lFyyZZLO-YMjctPymJDn4sPE7T5Ls__/MF-NWP-HIGHRESAROME-0025-FRANCE-WCS?request=GetCapabilities&service=WMS&version=1.3.0
+
+http://dcpc-nwp.meteo.fr/services/PS_GetCache_DCPCPreviNum?token=__5yLVTdr-sGeHoPitnFc7TZ6MhBcJxuSsoZp6y0leVHU__&amp;model=AROME&amp;grid=0.01&amp;package=HP1&amp;time=00H&amp;referencetime=2017-12-21T12:00:00Z&amp;format=grib2
+
+http://dcpc-nwp.meteo.fr/services/PS_GetCache_DCPCPreviNum?token=__5yLVTdr-sGeHoPitnFc7TZ6MhBcJxuSsoZp6y0leVHU__&model=AROME&grid=0.01&package=SP1&time=00H&referencetime=2017-12-21T12:00:00Z&format=grib2
+
+http://dcpc-nwp.meteo.fr/services/PS_GetCache_DCPCPreviNum?token=__5yLVTdr-sGeHoPitnFc7TZ6MhBcJxuSsoZp6y0leVHU__&model=AROME&grid=0.01&package=SP1&format=grib2

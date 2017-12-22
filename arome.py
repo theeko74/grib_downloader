@@ -1,4 +1,10 @@
+"""
+Arome class module.
 
+Author: S.CARLIOZ <sylvain.carlioz@gmail.com>
+License: MIT
+2017
+"""
 
 from model import WeatherModel
 

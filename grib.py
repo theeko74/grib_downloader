@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 Main file for GRIB downloader script.
+
+Author: S.CARLIOZ <sylvain.carlioz@gmail.com>
+License: MIT
+2017
 """
 
 import argparse
