@@ -7,8 +7,19 @@ Two models are available:
     * Arome   0.025°    1,3mk   2 days
 
 
+INSTALLATION
+------------
+
+* The script runs under python3, so make sure it is installed.
+* Install dependencies:
+```
+$ pip3 install -r requirements.txt
+```
+
+
 GETTING STARTED
 ---------------
+
 1. First, you need to choose a model between arpege or arome;
 2. Then, you need to define a zone to download.
 
