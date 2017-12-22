@@ -9,6 +9,7 @@ License: MIT
 import requests
 import time
 import sys
+import os
 import logging as log
 
 
@@ -51,7 +52,9 @@ class WeatherModel:
             time.strftime("%d%m%Y-%H%M%S")
         )
         if path:
-            file_name = path + file_name
+            file_name = path + '/' + file_name
+        else:
+            file_name = os.getcwd() + '/' + file_name
         log.debug("Write file: {}".format(file_name))
 
         # Open file and stream downloaded bits by 1024
