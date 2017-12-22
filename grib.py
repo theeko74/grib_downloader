@@ -11,8 +11,8 @@ import argparse
 import sys
 import logging
 
-from arome import Arome
-from arpege import Arpege
+from weather_models.arome import Arome
+from weather_models.arpege import Arpege
 
 
 def main():
