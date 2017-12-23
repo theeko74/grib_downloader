@@ -1,9 +1,9 @@
+# Author: S.CARLIOZ <sylvain.carlioz@gmail.com>
+# License MIT
+# 2017
+
 """
 Weather model abstract class module.
-
-Author: S.CARLIOZ <sylvain.carlioz@gmail.com>
-License: MIT
-2017
 """
 
 import requests
@@ -70,7 +70,9 @@ class WeatherModel:
         log.debug("GRIB file saved at: {}".format(file_name))
 
     def set_zone(self, zone):
-        """Transpose zone to (x,X,y,Y) coordinates"""
+        """
+        Transpose zone to (x,X,y,Y) coordinates
+        """
         if zone == 'hyeres':
             log.debug("Set zone: Hyères")
             self.zone = zone

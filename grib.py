@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# Author: S.CARLIOZ <sylvain.carlioz@gmail.com>
+# License MIT
+# 2017
+
 """
 Main file for GRIB downloader script.
 
@@ -16,6 +21,9 @@ from weather_models.arpege import Arpege
 
 
 def main():
+    """
+    Main function that runs the script.
+    """
 
     # Parse command line arguments
     parser = argparse.ArgumentParser()
