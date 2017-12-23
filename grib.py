@@ -6,11 +6,10 @@
 
 """
 Main file for GRIB downloader script.
-
-Author: S.CARLIOZ <sylvain.carlioz@gmail.com>
-License: MIT
-2017
 """
+
+__author__ = 'Sylvain Carlioz'
+__version__ = '1.0'
 
 import argparse
 import sys
