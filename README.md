@@ -6,11 +6,11 @@ Command line script to download grib files from Meteo France's servers.
 Two models are available:
 
 * Arpege:
-    * Definition: 0.1° (7,5km)
+    * Definition: 0.1° (7,5km/6NM)
     * Validity: 4 days
 
 * Arome
-    * Definition: 0.025° (1,3mk)
+    * Definition: 0.025° (1,3km/1,5NM)
     * Validity: 2 days
 
 
