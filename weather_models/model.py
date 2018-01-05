@@ -6,11 +6,12 @@
 Weather model abstract class module.
 """
 
-import requests
 import time
 import sys
 import os
 import logging as log
+
+import requests
 
 
 class WeatherModel:
