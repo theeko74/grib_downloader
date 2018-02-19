@@ -28,18 +28,19 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Mandatory argument
-    parser.add_argument('weather_model', help="Define a model")
+    parser.add_argument('weather_model', help="Select a weather model between arpege (0.1°/4days) or arome (0.025°/2days)")
 
     # Optional arguments
     parser.add_argument('-v', '--verbose', action='store_true',
                         help="Switch to verbose mode")
+    parser.add_argument('-o', '--output', help="Location to save the GRIB file")
 
     # Mutually exclusive optional arguments
     zone_arg = parser.add_mutually_exclusive_group(required=True)
     zone_arg.add_argument('-z', '--zone',
-                          help="Define a zone to download")
+                          help="Select a zone to download: hyeres")
     zone_arg.add_argument('-c', '--coordinates',
-                          help="Define coordinates of a zone to download." \
+                          help="Define coordinates of a zone to download" \
                           " Format: x,X,y,Y")
     args = parser.parse_args()
 
@@ -64,7 +65,7 @@ def main():
         alright = model.set_zone(args.zone)
         if alright > 0:
             raise parser.error("Wrong zone. Options are: hyeres")
-        model.dwl()
+        model.dwl(path=args.output)
         return sys.exit(0)
 
     if args.coordinates:

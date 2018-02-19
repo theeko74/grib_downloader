@@ -12,6 +12,7 @@ import os
 import logging as log
 
 import requests
+import loading
 
 
 class WeatherModel:
@@ -50,25 +51,29 @@ class WeatherModel:
         file_name = "GRIB_{0}_{1}_{2}.grb".format(
             self.__class__.__name__,
             self.zone,
-            time.strftime("%d%m%Y-%H%M%S")
+            time.strftime("%d-%m-%Y_%Hh%M-%S")
         )
         if path:
-            file_name = path + '/' + file_name
+            if path[-1] == '/':
+                file_name = path + file_name
+            else:
+                file_name = path + '/' + file_name
         else:
             file_name = os.getcwd() + '/' + file_name
         log.debug("Write file: {}".format(file_name))
 
         # Open file and stream downloaded bits by 1024
         with open(file_name, 'wb') as f:
-            loading_count = 0
+            tot_size = r.headers.get('content-length')
+            if not tot_size:
+                # Use a default file size of 10Mo
+                tot_size = 8 * 1000000
+            lb = loading.LoadingBar(tot_size, verbose=True)
             for chunk in r.iter_content(chunk_size=1024):
-                if loading_count % 100 == 0:
-                    sys.stdout.write("*")
-                    sys.stdout.flush()
+                lb.update(len(chunk))
                 f.write(chunk)
-                loading_count += 1
-            print("*")
-        log.debug("GRIB file saved at: {}".format(file_name))
+            lb.done()
+        print("GRIB downloaded >> {}".format(file_name))
 
     def set_zone(self, zone):
         """
