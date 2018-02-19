@@ -82,6 +82,22 @@ class WeatherModel:
         if zone == 'hyeres':
             log.debug("Set zone: Hyères")
             self.zone = zone
+            self.lat_min = 44
+            self.lat_max = 42
+            self.long_min = 5
+            self.long_max = 8
+            self.api = self.api.format(
+                long_min = self.long_min,
+                long_max = self.long_max,
+                lat_min  = self.lat_min,
+                lat_max  = self.lat_max,
+                args     = self.args
+            )
+            return 0
+
+        elif zone == 'lion-sardaigne':
+            log.debug("Set zone: Lion-Sardaigne")
+            self.zone = zone
             self.lat_min = 45
             self.lat_max = 38
             self.long_min = 1
@@ -94,6 +110,7 @@ class WeatherModel:
                 args     = self.args
             )
             return 0
+
         else:
             log.debug("Wrong zone name")
             return 1
