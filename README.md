@@ -23,6 +23,8 @@ Installation
 $ pip3 install -r requirements.txt
 ```
 
+Note: loading lib can be found at https://github.com/theeko74/loading
+
 
 Getting Started
 ---------------
