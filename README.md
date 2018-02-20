@@ -1,17 +1,25 @@
 Grib Downloader
 ===============
 
-Command line script to download grib files from Meteo France's servers.
+Command line script to download grib files from different sources on the web.
 
 Two models are available:
 
-* Arpege:
+* Arpege (from [Meteo France](http://www.meteofrance.com/)):
     * Definition: 0.1° (7,5km/6NM)
     * Validity: 4 days
 
-* Arome
+* Arome (from [Meteo France](http://www.meteofrance.com/))
     * Definition: 0.025° (1,3km/1,5NM)
     * Validity: 2 days
+
+* OpenWRF (from [OpenSkiron](http://openskiron.org/en/))
+    * France zone:
+        * Definition: 12km
+        * Validity: 5 days
+    * Lion, Nice zones:
+        * Definition: 4km
+        * Validity: 2 days
 
 
 Installation
