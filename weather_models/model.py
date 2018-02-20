@@ -73,7 +73,9 @@ class WeatherModel:
                 lb.update(len(chunk))
                 f.write(chunk)
             lb.done()
-        print("GRIB downloaded >> {}".format(file_name))
+
+        print("GRIB downloaded.")
+        print(">> {}".format(file_name))
 
     def set_zone(self, zone):
         """
