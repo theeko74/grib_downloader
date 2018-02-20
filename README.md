@@ -42,11 +42,15 @@ Getting Started
 
 Examples:
 ```
-$ ./grib.py arome -z hyeres
+$ ./grib.py meteofrance arome -z hyeres
 ```
 
 ```
-$ ./grib.py arome -c -2,1,42,45
+$ ./grib.py meteofrance arome -c -2,1,42,45
+```
+
+```
+$ ./grib.py openwrf -z france
 ```
 
 
