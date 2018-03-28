@@ -83,7 +83,7 @@ def main():
     # Mutually exclusive optional arguments for choising zone
     zone_arg = meteofrance.add_mutually_exclusive_group(required=True)
     zone_arg.add_argument('-z', '--zone',
-                          help="Select a zone to download: hyeres")
+                          help="Select a zone to download: hyeres, lion-sardaigne")
     zone_arg.add_argument('-c', '--coordinates',
                           help="Define coordinates of a zone to download" \
                           " Format: x,X,y,Y")

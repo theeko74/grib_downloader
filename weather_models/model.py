@@ -10,6 +10,7 @@ import time
 import sys
 import os
 import logging as log
+from wx import Yield
 
 import requests
 import loading
@@ -29,7 +30,7 @@ class WeatherModel:
         self.args = 'wgtprn'
         self.zone = None
 
-    def dwl(self, coordinates=(), path=None):
+    def dwl(self, coordinates=(), path=None, loadingBarGUI=None):
         """
         Method to download the grib file.
         Coordinates (x, X, y, Y) can be specified.
@@ -69,13 +70,24 @@ class WeatherModel:
                 # Use a default file size of 10Mo
                 tot_size = 8 * 1000000
             lb = loading.LoadingBar(tot_size, verbose=True)
+            chunk_len = 0
             for chunk in r.iter_content(chunk_size=1024):
+                # Use the command line interface
+                # loading bar indicator
                 lb.update(len(chunk))
                 f.write(chunk)
+                if loadingBarGUI:
+                    # Use the GUI interface, if specified
+                    chunk_len += len(chunk)
+                    self.loading_gui(chunk_len, tot_size, loadingBarGUI)
             lb.done()
 
         print("GRIB downloaded.")
         print(">> {}".format(file_name))
+
+    def loading_gui(self, chunk_len, tot_size, loadingBarGUI):
+        loadingBarGUI.Update(chunk_len/tot_size*100)
+        Yield()
 
     def set_zone(self, zone):
         """

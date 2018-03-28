@@ -8,6 +8,7 @@ OpenWRF class module.
 
 import os
 import logging as log
+from wx import Yield
 
 import requests
 from bs4 import BeautifulSoup
@@ -35,7 +36,7 @@ class OpenWrf:
                 if self.zone in endpoint.lower():
                     return endpoint
 
-    def dwl(self, path=None):
+    def dwl(self, path=None, loadingBarGUI=None):
         """
         Launch the download of the GRIB file, and save it in current directory
         or in another path, if specified.
@@ -74,11 +75,20 @@ class OpenWrf:
         lb = loading.LoadingBar(tot_size, verbose=True)
         log.debug("Start to download")
         log.debug("Total file size is {}".format(tot_size))
+        chunk_len = 0
         with open(filename, 'wb') as grib_file:
             for chunk in r.iter_content(chunk_size=1024):
                 lb.update(len(chunk))
+                if loadingBarGUI:
+                    # Use the GUI loading bar if specified
+                    chunk_len += len(chunk)
+                    self.loading_gui(chunk_len, tot_size, loadingBarGUI)
                 grib_file.write(chunk)
             lb.done()
 
         print("GRIB downloaded.")
         print(">> {}".format(filename))
+
+    def loading_gui(self, chunk_len, tot_size, loadingBarGUI):
+        loadingBarGUI.Update(chunk_len/tot_size*100)
+        Yield()
