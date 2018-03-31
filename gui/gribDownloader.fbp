@@ -18,7 +18,7 @@
         <property name="internationalize">0</property>
         <property name="name">gribDownloader</property>
         <property name="namespace"></property>
-        <property name="path">/Users/master/Documents/Code/grib_downloader/gui</property>
+        <property name="path">/Users/sc/Documents/Code/grib_downloader/gui</property>
         <property name="precompiled_header"></property>
         <property name="relative_path">1</property>
         <property name="skip_lua_events">1</property>
