@@ -6,10 +6,10 @@
 Arome class module.
 """
 
-from .model import WeatherModel
+from .model import MeteoFranceModel
 
 
-class Arome(WeatherModel):
+class Arome(MeteoFranceModel):
 
     def __init__(self):
         super().__init__()

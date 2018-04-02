@@ -16,7 +16,7 @@ import requests
 import loading
 
 
-class WeatherModel:
+class MeteoFranceModel:
     """
     Abstract class.
     Represent a weather model for donwnloading GRIB files.

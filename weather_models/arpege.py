@@ -6,10 +6,10 @@
 Arpege class module.
 """
 
-from .model import WeatherModel
+from .model import MeteoFranceModel
 
 
-class Arpege(WeatherModel):
+class Arpege(MeteoFranceModel):
 
     def __init__(self):
         super().__init__()
