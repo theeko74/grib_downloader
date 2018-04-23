@@ -69,7 +69,7 @@ class MeteoFranceModel:
             if not tot_size:
                 # Use a default file size of 10Mo
                 tot_size = 8 * 1000000
-            lb = loading.LoadingBar(tot_size, verbose=True)
+            lb = loading.InternetLoadingBar(tot_size)
             chunk_len = 0
             for chunk in r.iter_content(chunk_size=1024):
                 # Use the command line interface
