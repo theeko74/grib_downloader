@@ -78,7 +78,9 @@ def main():
     meteofrance = subparsers.add_parser("meteofrance",
                                         help="Select Meteo France models")
     meteofrance.add_argument('weather_model',
-                             help="Select a weather model from MeteoFrance. \   Options are: arpege (0.1°/4days), arome \ (0.025°/2days)")
+                             help="Select a weather model from MeteoFrance." \
+                             "Options are: arpege (0.1°/4days), arome" \
+                             "(0.025°/2days)")
 
     # Mutually exclusive optional arguments for choising zone
     zone_arg = meteofrance.add_mutually_exclusive_group(required=True)
@@ -92,7 +94,8 @@ def main():
     # OpenWRF model
     openwrf = subparsers.add_parser("openwrf", help="Select OpenWRF model")
     openwrf.add_argument('-z', '--zone',
-                         help="Select a zone to download. Options are: france \ (12km), lion (4km), nice (4km)")
+                         help="Select a zone to download. Options are: france" \
+                         "(12km), lion (4km), nice (4km)")
     openwrf.set_defaults(func=call_openwrf)
 
     # Parse arguments
@@ -103,7 +106,10 @@ def main():
         logging.basicConfig(level=logging.DEBUG)
 
     # Run the appropriate function
-    args.func(args)
+    try:
+        args.func(args)
+    except AttributeError:
+        parser.error("Wrong or unspecified weather model.")
 
 
 if __name__ == '__main__':

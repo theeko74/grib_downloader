@@ -13,7 +13,7 @@ from wx import Yield
 import requests
 from bs4 import BeautifulSoup
 
-import loading
+import loadingbar
 
 
 class OpenWrf:
@@ -72,7 +72,7 @@ class OpenWrf:
             tot_size = 13 * 1000000
 
         # Loading bar
-        lb = loading.LoadingBar(tot_size, verbose=True)
+        lb = loadingbar.InternetLoadingBar(tot_size)
         log.debug("Start to download")
         log.debug("Total file size is {}".format(tot_size))
         chunk_len = 0
