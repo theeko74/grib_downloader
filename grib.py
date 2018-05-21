@@ -46,7 +46,10 @@ def call_meteofrance(args):
 
     if args.coordinates:
         # Coordinates are defined
-        model.dwl(coordinates=args.coordinates.split(','))
+        if ',' in args.coordinates:
+            model.dwl(coordinates=args.coordinates.split(','))
+        else:
+            model.dwl(coordinates=args.coordinates.split(' '))
         return sys.exit(0)
 
 

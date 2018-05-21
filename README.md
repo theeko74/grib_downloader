@@ -46,7 +46,13 @@ $ ./grib.py meteofrance arome -z hyeres
 ```
 
 ```
-$ ./grib.py meteofrance arome -c -2,1,42,45
+$ ./grib.py meteofrance arome -c 1,2,42,45
+```
+
+** Note **
+For negative coordinates first, use the format with space separator :
+```
+$ ./grib.py meteofrance arome -c "-2 1 42 45"
 ```
 
 ```
